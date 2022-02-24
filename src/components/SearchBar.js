@@ -1,4 +1,6 @@
 import React from 'react';
+import App from './App';
+
 class SearchBar extends React.Component {
 	constructor(props) {
 		super();
@@ -14,7 +16,7 @@ class SearchBar extends React.Component {
 	onFormSubmit = (e) => {
 		e.preventDefault();
 		// pass the searchQuery back to APP
-		this.props.onSubmit(this.state.searchQuery);
+		this.props.onSubmit.call(App, this.state.searchQuery);
 	};
 	render() {
 		return (
